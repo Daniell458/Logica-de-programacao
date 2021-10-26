@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+Digite aqui quantos quadrados: <input/> 
+<br><br>
+<button>Confirme</button>
+<br><br>
+
+
+<canvas width="600" height="400"></canvas>
+<script>
+
+	var input = document.querySelector('input');
+	input.focus();
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	function roda(){
+
+		function desenhaQuadrado (x){
+
+			pincel.fillStyle = 'green'
+			pincel.fillRect(x, 0, 50, 50);
+			pincel.fillStroke = 'black'
+			pincel.strokeRect(x, 0, 50, 50);
+		}
+
+		var repete = input.value;
+		var contador = 1;
+		var x = 0;
+		while(contador <= repete){
+
+			desenhaQuadrado(x);
+			x = x + 50;
+			contador++;		
+		}
+	}
+	var button = document.querySelector("button");
+	button.onclick = roda;
+	
+</script>

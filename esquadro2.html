@@ -1,0 +1,23 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //Triangulo 1: coordenadas do ponto A (50, 50); coordenadas do ponto B (50, 400); coordenadas do ponto C (400, 400);
+
+    //Triangulo 2: coordenadas do ponto A (100, 175); coordenadas do ponto B (100, 350); coordenadas do ponto C (275, 350);
+    function desenhaEsquadro(xa, ya , xc, yc, cor){
+
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = cor
+        pincel.beginPath();
+        pincel.moveTo(xa, ya);
+        pincel.lineTo(xa, yc);
+        pincel.lineTo(xc, yc);
+        pincel.fill();
+    }
+    
+    desenhaEsquadro(50, 50, 400, 400, 'black');
+    desenhaEsquadro(100, 175, 275, 350, 'white');
+</script>

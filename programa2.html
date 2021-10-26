@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	function desenhaQuadrado(x, y, cor){
+
+		var tela = document.querySelector('canvas');
+		var pincel = tela.getContext('2d');
+
+		pincel.fillStyle = cor
+		pincel.fillRect(x, y, 50, 50);
+
+		// A função '.fillStroke' é usada para criar um contorno, uma margem, algo que dê para delimitar uma área, esta recebe como valor a cor desejada.
+		pincel.fillStroke = 'black'
+
+		// A função 'strokeRect' é usada para especificar as coordenadas e tamanhos desejados através de (X, Y, tX, tY) para se desenhar tal margem.
+		pincel.strokeRect(x, y, 50, 50);
+	}
+
+	/*var x = 0;
+
+	while(x < 600){
+
+		desenhaQuadrado(x, 0, 'green');
+		x = x + 50;
+	}*/
+
+	for(var x = 0; x < 600; x = x + 50) {
+
+		desenhaQuadrado(x, 0, 'green');
+	}
+</script>

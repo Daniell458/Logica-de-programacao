@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	function desenhaQuadrado (posicao1, posicao2){
+
+		pincel.fillStyle = 'green'
+		pincel.fillRect(posicao1, posicao2, 50);
+		pincel.fillStroke = 'black'
+		pincel.strokeRect(posicao1, posicao2, 50);
+	}
+
+	var repete = parseInt(prompt('Digite quantos quadrados:'));
+	var contador = 1;
+
+	while(contador <= repete){
+
+		var posicao1 = parseInt(prompt('Digite a primeira posição:'));
+		var posicao2 = parseInt(prompt('Digite a segunda posição:'));
+		desenhaQuadrado(posicao1, posicao2);
+		contador++
+	}
+	var posicaoStroke1 = parseInt(prompt('Digite a primeira posição do contorno:'));
+	var posicaoStroke2 = parseInt(prompt('Digite a segunda posição do contorno:'))
+	pincel.fillStroke = 'black'
+	pincel.strokeRect(posicaoStroke1, posicaoStroke2, 50);
+	
+
+</script>

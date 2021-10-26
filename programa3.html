@@ -1,0 +1,28 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(evento){
+
+        // O 'console.log' faz aparecer no console do navegador o evento ocorrido ao efetuar determinada ação, no caso do clique do mouse no canvas ele mostra todos os parâmetros e coordenadas de onde foi clicado e etc.
+        
+        // Após feito a ação com o clique do mouse, com o uso da variável á seguir, e possível pegar a coordenada da tela para assim obter o valor da mesma. (o atributo '- tela.offset****' é usado para redimencionar o tamanho da tela, podendo assim usar somente o espaço do canvas).
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+        
+        // O 'console.log' faz aparecer no console do navegador o evento ocorrido ao efetuar determinada ação, no caso do clique do mouse no canvas ele mostra todos os parâmetros e coordenadas de onde foi clicado e etc.
+        console.log(x + ' , ' + y);
+    }
+
+    tela.onclick = desenhaCirculo;
+</script>

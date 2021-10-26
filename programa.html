@@ -1,0 +1,46 @@
+<!-- A tag 'canvas' é utilizada para determinar uma área a ser desenhada/pintada, dentro da tag é possível colocar o tamanho da canva através dos atributos: width""(largura) e height""(altura).-->
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+
+    // Quando se chama outra variável dentro de outra variável como um atributo, pode se utilizar o ponto para dar-lhe uma função/ação, no caso do 'getContext' ele determina com que padrão de dimensão que iremos trabalhar.
+    var pincel = tela.getContext('2d');
+    
+    // O atributo 'fill' segnifica preenchimento, o mesmo pode ser usado em conjunto com outras palavras para formar combinações e assim ações/funções úteis para o código, no caso do 'fillStyle' ele especifica qual a cor em que o java deve desenhar (lembrando que a cor sempre deverá vir antes da função em que solicita o preenchimento de alguma forma/desenho).
+    pincel.fillStyle = 'lightgrey'
+
+    // Neste caso, temos a solicitação de preenchimento de um retângulo através da função 'fillRect', dentro dos parenteses da mesma é necessário colocar o ponto de início do preenchimento desejado através de 4 números (os 2 primeiros são o início e os 2 últimos são o fim, sempre separando-os com virgulas), para isso, usa-se o mesmo conceito do plano cartesiano na ordem: "primeiro a posição inicial X do pincel, posição inicial Y do pincel, e segundo posição final X do pincel, e posição final Y do pincel." (lembrando que se não for atribuida nenhuma cor de preenchimento, por padrão, o java usa o preto).
+    pincel.fillRect(0, 0, 600, 400);
+     
+    pincel.fillStyle = 'green'
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red'
+    pincel.fillRect(400, 0, 200, 400);
+
+    pincel.fillStyle = 'yellow'
+
+    // A função '.beginPath' é usada para criar um novo caminho na tela, utiliza-se sempre que for iniciar um novo desenho.
+    pincel.beginPath();
+
+    // A função '.moveTo' é utilizada para determinar o início do traçado com as coordenadas (X, Y).
+    pincel.moveTo(300, 200);
+
+    // A função '.lineTo' determina até onde esta linha iniciada por 'moveTo' se desenhe através das coordenadas (X,Y). Com essa função, nós temos várias opções de desenhos possíveis a serem criados.
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+
+    // A função '.fill' serve para se preencher o desenho/traçado em questão.
+    pincel.fill();
+
+    pincel.fillStyle = 'blue'
+    pincel.beginPath();
+
+    // A função '.arc' é usada para criar arcos com formatos circulares, dentro de seus atributos e passado o local onde se iniciará este arco (X, Y), o raio do circulo (R), o angulo inicial (AI) e o angulo final (AF) em radianos através das coordenadas (X, Y, R, AI, AF).
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);
+    pincel.fill();
+</script>
