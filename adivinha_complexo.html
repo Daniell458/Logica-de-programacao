@@ -1,0 +1,76 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare aqui com meu segredo!</button>
+
+<script>
+
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+    }
+    
+    //Todas as variáveis dentro de funcões só existem dentro das mesmas, a menos que seja solicitado que retorne um número para o programa através do parâmetro "return".
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+
+            //Quando queremos indicar se uma instrução é diferente de outra, usamos: "!==", para indicar se é igual, usamos: "==", para indicar se é menor que X ou maior que X, usamos respectivamente: "< ou >".
+            if(numeroAleatorio !== 0) {
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+                
+                    if(segredos[posicao] == numeroAleatorio){
+                        achou = true;
+                        break;
+                    }
+                }    
+                    if(achou == false){
+                        segredos.push(numeroAleatorio);
+                        numero++;
+                    }
+            }
+        }
+
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(3);
+    
+    //O "console.log()" faz com que apareça no console do navegador a instrução solicitada entre os parenteses.
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+        var achou = false;
+        for(var posicao = 0; posicao < segredos.length; posicao++){
+
+            if (input.value == segredos[posicao]) {
+                
+                alert ("Você ACERTOU!");
+                achou = true;
+                break;
+            } 
+        }
+
+        if(achou == false){
+
+            alert("Você Errou!!!");
+        }
+
+        input.value = "";
+        input.focus();    
+    }
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+</script>

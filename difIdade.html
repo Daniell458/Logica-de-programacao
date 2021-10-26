@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    //As "function ()" são criadas como um atalho para facilitar o trabalho do DEV.
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //As "var" são utilizadas para inserir valores aleatórios para criar infinitas funcionalidades e são nomeados através de "codinomes" afim de melhorar a visibilidade do programa para o DEV.
+    var idadeDan = 20;
+    var idadeLe = 31;
+    var totalIdade = (idadeDan+idadeLe);
+    var mediaIdade = (totalIdade/2);
+
+    mostra("Olá!");
+    mostra("A diferença de idade entre mim e meu irmão é de = " + (idadeLe-idadeDan));
+
+    //o atributo "Math.round" serve para arrendondar um resultado de frações.
+    
+    mostra("E a média de nossas idades é = " + Math.round(mediaIdade));
+
+
+
+</script>

@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha () {
+        document.write("<hr>")
+    }
+
+    function mostra(frase) {
+        document.write("<big> " + frase +" </big>");
+        pulaLinha();
+    }
+
+    var anoAtual = 2021;
+    var anoInicio = 1500;
+    var totalAno = anoAtual-anoInicio;
+    var media = 28;
+
+    mostra("Desde " + anoInicio + " até hoje, se passaram " + totalAno);
+    mostra("Se levarmos em consideração uma média de " + media + (" anos para procriação, desde ") + anoInicio + (" nós já procriamos ") + (totalAno/media) + (" vezes!!"));
+</script>

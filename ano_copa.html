@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function pulaLinha() {        
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //O "promt" é utilizado para solicitar uma entrada do usuario através de um pop-up.
+    var limite = parseInt(prompt("Entre com a data limite"));
+
+    var anoCopa = 1930;
+
+    //O "while" é usado para fazer uma repetição, tomando como inicio uma "var" acendente, tendo como atributo a condição para repetição, e dentro do bloco desta função, deve-se ter o incremento para a "var" com intuito de que alcançe a condição final de repetição para a quebra do ciclo.
+    while(anoCopa <= limite) {
+        mostra("Teve copa em " + anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+    mostra("FIM");
+</script>

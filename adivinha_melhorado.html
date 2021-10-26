@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare aqui com meu segredo!</button>
+
+<script>
+
+    //O atributo "Math.random()" é usado para gerar um número decimal aleatório, usa-se o "*10" para receber um numero interio e usa-se o "Math.round()" para arredondar o número recebido.
+    var segredo = Math.round(Math.random() * 10);
+    
+    //O "document.querySelector("");" é utilizado para fazer ligaçoes com Tags do HTML.
+    var input = document.querySelector("input");
+
+    //O ".focus" é usado para focar em uma caixa de entrada que é especificada anteriormente do ponto.
+    //O ".value" é usado para consultar ou redefinir o valor de um elemento especificado anteriormente do ponto.
+    input.focus();
+
+    function verifica () {
+
+        if (input.value == segredo) {
+            
+            alert ("Você ACERTOU!");
+        } else {
+
+            alert ("Você ERROU!!!");
+        }
+
+        input.value = "";
+        input.focus();    
+    }
+    var button = document.querySelector("button");
+
+    //O ".onclick" é usado para especificar uma ação após o usuário fazer um click em um local especificado antes do ponto.
+    button.onclick = verifica;
+</script>
